@@ -104,7 +104,7 @@ class Consulta(FormView):
 		cedula = None
 		if form.is_valid():
 			cedula = form.cleaned_data['cedula']
-		return HttpResponseRedirect(cedula+'/pdf/')
+		return HttpResponseRedirect(reverse('Empleados:pdf', args=[cedula,]))
 	def form_valid(self, form):
 		return super(Consulta, self).form_valid(form)
 
