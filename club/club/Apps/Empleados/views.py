@@ -7,7 +7,7 @@ from django.contrib.auth import logout, authenticate, login
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.forms import AuthenticationForm
 from django.utils.decorators import method_decorator 
-from django_pdfkit.views import PDFView
+from wkhtmltopdf.views import PDFTemplateView
 from .forms import EmpleadoForm, ConsultaForm
 from .models import Empleado
 # Create your views here.
@@ -77,23 +77,21 @@ class Login(FormView):
 		return super(Login, self).form_valid(form)
 
 
-class Carnet(PDFView):
+class Carnet(PDFTemplateView):
 	login_required = True
 	model = Empleado
 	template_name = 'Empleados/carnet.html'
-	pdfkit_options = {
-		'page-size' : 'letter',
-		'encoding'  : 'UTF-8',
-	}
+	show_content_in_browser = True
+	cmd_options = {
+		'quiet' : False,
+    }
 
 	def get_context_data(self, **kwargs):
 		context = super().get_context_data(**kwargs)
-		CI = kwargs['pk']
+		CI = kwargs['Empleado_CI']
 		empl = Empleado.objects.get(CI=CI)
 		context['Empleado'] = empl
 		self.filename = "%s.pdf" % empl.CI
-		empl.Carnet = self.get_filename()
-		empl.save()
 		return context
 
 class Consulta(FormView):
@@ -106,14 +104,18 @@ class Consulta(FormView):
 		cedula = None
 		if form.is_valid():
 			cedula = form.cleaned_data['cedula']
-		return HttpResponseRedirect('/pdf/'+cedula)
+		return HttpResponseRedirect(cedula+'/pdf/')
 	def form_valid(self, form):
 		return super(Consulta, self).form_valid(form)
 
-class ListaEmpleados(PDFView):
+class ListaEmpleados(PDFTemplateView):
 	model = Empleado
 	template_name = 'Empleados/reporte_empleados.html'
 	paginated_by = 60
+	show_content_in_browser = True
+	cmd_options = {
+		'quiet' : False,
+    }
 
 	def get_context_data(self, **kwargs):
 		context = super().get_context_data(**kwargs)
