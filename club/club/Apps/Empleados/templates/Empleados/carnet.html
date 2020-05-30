@@ -1,0 +1,160 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Carnet PDF</title>
+    <style>
+
+      *{
+            margin: 0;
+            padding: 0;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
+        .cabe{
+            width: 100%;
+            height: 90px;
+            background: #fff;
+
+        }
+        .cabe a{
+            margin-left: 40px;
+        }
+
+        h1{
+            margin-top: 40px;
+            margin-bottom: 40px;
+            font-size: 19pt;
+            font-weight: 900;
+            text-align: center;
+        }
+        .contenedor{
+            width: 250px;
+            height: 506px;
+            border: 2px solid #000;
+            border-radius: 2px;
+            margin: auto;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .contenedor a{
+            margin-left: 5px;
+            margin-top: 5px;
+        }
+            
+        
+        .foto{
+            width: 100px;
+            height: 150px;
+            border: 2px solid#000;
+            border-radius: 100px;
+            margin-top: 20px;
+            margin-bottom: 30px;
+            margin-left: auto;
+            margin-right: auto;
+            
+        }
+
+        .foto img{
+            width: 100%;
+            height: auto;
+            border-radius: 100px;
+        }
+        @supports(object-fit: cover){
+            .foto img{
+                height: 100%;
+                object-fit: cover;
+                object-position: center center;
+                border-radius: 100px;
+            }
+
+        }
+        .barra{
+            width: 100%;
+            height:5px;
+            background: #1a3bb3;
+
+        }
+        .datos h3{
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .datos table{
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        th{
+            font-size: 80%;
+            text-align:left;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            
+        }
+        .pie{
+            margin-top: 10px;
+            width: 100%;
+            height: 30px;
+            background: #e21717;
+        }
+        a .img-carnet{
+            width: 50%;
+            height: 60px;
+            clear: both;
+            float: left;
+        }
+        a .img-carnet1{
+            width: 50%;
+            height: 60px;
+            float: right;
+        }
+
+
+    </style>
+</head>
+<body>
+   <!--  <nav class="cabe">
+            <a href="#" class="navbar-brand scroll-top logoheader"> <img src="{% static 'img/Logo-club.jpg' %}" alt="Layer Template" width="200" height="90"></a>
+    </nav>
+    <h1>CARNET DE AFILIACIÓN AL CLUB KILOVATICO</h1> -->
+    <div class="contenedor">
+        <div class="navbar-brand inline-block">
+            <a href="#" class="navbar-brand scroll-top logoheader"> <img class="img-carnet" src="{% static 'img/logo-corpoelec.png' %}" alt="Layer Template" > <img class="img-carnet1"  src="{% static 'img/Logo-club.jpg' %}" alt="Layer Template"></a>
+        </div>
+        
+        <div class="barra"></div>
+        <div class="foto"><img src="{{ Empleado.Foto.url }}" alt=""></div>
+        <div class="datos">
+            <h3>{{ Empleado.Nombres }} {{ Empleado.Apellidos }}</h3>
+            <table> 
+                <thead>
+                    <tr>
+                        <th>CEDULA:</th> 
+                        <th>{{ Empleado.CI }}</th>
+                    </tr>
+                    <tr>
+                        <th>N° TRABAJADOR:</th> 
+                        <th>{{ Empleado.Numero_Personal }}</th>
+                    </tr>
+                    <tr>
+                        <th>GERENCIA:</th> 
+                        <th>{{ Empleado.Departamento }}</th>
+                    </tr>
+                    <tr>
+                        <th>CARGA FAMILIAR:</th> 
+                        <th>{{ Empleado.Carga_Familiar }}</th>
+                    </tr>
+                    <tr>
+                        <th>SEXO:</th> 
+                        <th>{{ Empleado.Sexo }}</th>
+                    </tr>
+                </thead>
+            </table>
+        </div>
+        <footer class="pie"></footer>
+    </div>
+</body>
+</html>

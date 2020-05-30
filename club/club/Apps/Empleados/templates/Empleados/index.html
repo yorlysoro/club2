@@ -1,0 +1,315 @@
+{% load static %}
+<!DOCTYPE html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Club Kilovatico</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+        <link rel="stylesheet" href="{% static 'css/bootstrapindex.min.css' %}">
+       
+        <link rel="stylesheet" href="{% static 'css/all.min.css' %}">
+        <link rel="stylesheet" href="{% static 'css/wow-animate.css' %}">
+        <link rel="stylesheet" href="{% static 'css/templatemo-style.css' %}">
+        <script src="{% static 'js/vendor/modernizr-2.6.2-respond-1.1.0.min.js' %}"></script>
+    </head>
+    <body>
+  
+    <div class="header" id="top" >
+        <nav class="navbar navbar-inverse" role="navigation">
+          <div class="container">
+              <div class="navbar-header" style="margin-bottom: 10px;">
+                  <button type="button" id="nav-toggle" class="navbar-toggle" data-toggle="collapse" data-target="#main-nav" style="margin-top: 35px;">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                  </button>
+                  <a href="#" class="navbar-brand scroll-top logoheader"> <img src="{% static 'img/Logo-club.jpg' %}" alt="Layer Template"> CLUB KILOVATICO</a>
+              </div>
+              <!--/.navbar-header-->
+              <div id="main-nav" class="collapse navbar-collapse">
+                <ul class="a nav navbar-nav navbar-right " style="margin-top: 30px; font-weight: 800;">
+                  <li><a href="/home">INICIO</a></li>
+                  <li><a href="#second-section" >SERVICIOS</a>
+                    <ul class="sub-menu">
+                    </ul>
+                  </li>
+                  <li><a href="/consultar">CONSULTAR</a></li>
+                  <li><a href="#contacts">CONTACTENOS</a></li>
+                  {% if request.user.is_superuser %}
+                    <li><a href="/admin">ADMIN</a></li>
+                  {% endif %}
+                  <li><a href="/logout" class="btn btn-danger" style="font-weight: 800; color: #fff;">CERRAR SESIÓN</a></li>
+                </ul>
+              </div>
+              <!--/.navbar-collapse-->
+      		</div>
+      		<!--/.container-->
+      </nav>
+          <!--/.navbar-->
+    </div>
+    <!--/.header-->
+
+
+    <div class="parallax">
+
+
+      <div class="bg__first templatemo-position-relative" style="margin-top: 5px;">
+        <div class="container">
+          <div class="templatemo-flexbox">
+            <div class="row">
+              <div class="col-md-4 col-sm-4 col-xs-12">
+                <div class="left-image wow animated fadeInLeft">
+                  <img src="" alt="" class="img-responsive">
+                </div>
+              </div>
+              <div class="col-md-12 col-sm-8 col-xs-12" style="margin-left: 200px;">              
+                <div class="right-caption wow animated fadeInRight">
+                  <h4>BIENVENIDO AL CLUB KILOVATICO</h4>
+                  <h2><span class="blue">REGISTRARSE</span></h2>
+                  <p> Para llenar los datos de afilición haga click en el boton de <strong>LLENAR FORMULARIO</strong> </p>
+                  <div class="stroked-button"><a href="/registro">LLENAR FORMULARIO</a></div><br>
+                </div>
+              </div>
+            </div>            
+          </div>          
+        </div>
+        <div class="arrow text-center">
+          <a href="#" class="scroll-link btn btn-dark" data-id="second-section"><i class="fa fa-angle-down"></i></a>
+        </div>
+      </div>
+
+
+      <div id="second-section"> 
+        <div class="bg__second"> 
+        </div>
+      </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12 fadeInUp">
+            <div class="sevice-items">
+              <div class="col-md-3 col-sm-6 wow bounceInUp">
+                <div class="single-item single-itemagua">
+                  <i class="fa fa-swimmer"></i>
+                  <h2>PISCINAS</h2>
+                  <ul>
+                    <li>Piscinas Semiolimpica</li>
+                    <li>Piscinas de Niños</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="col-md-3 col-sm-6 wow bounceInUp">
+                <div class="single-item single-itemarbol">
+                  <i class="fa fa-seedling"></i>
+                  <h2>AREAS VERDES</h2>
+                  <p></p>
+                </div>
+              </div>
+              <div class="col-md-3 col-sm-6 wow bounceInUp">
+                <div class="single-item single-itembasket">
+                  <i class="fa fa-basketball-ball"></i>
+                  <h2>ESPACIOS DEPORTIVOS</h2>
+                  <ul>
+                    <li>Campo Deportivo de Fútbol</li>
+                    <li>Campo Deportivo de Softbol</li>
+                    <li>Canchas de Usos Múltiples</li>
+                    <li>Cancha de Bolas Criollas</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="col-md-3 col-sm-6 wow bounceInUp">
+                <div class="single-item">
+                    <i class="fa fa-users"></i>
+                    <h2>AREAS SOCIALES</h2>
+                    <ul>  
+                      <li>Salón de Reuniones fiestas</li>
+                      <li>Caney de Reuniones</li>
+                      <li>Kiosko a Espacio Abierto</li>
+                      <li>Fuente de Soda</li>        
+                    </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+            <div class="service-arrow">
+              <a href="#" class="scroll-link btn btn-dark" data-id="third-section"><i class="fa fa-angle-down"></i></a>
+            </div>
+          </div>
+        </div>        
+      </div>
+
+
+      <div class="bg__third">
+        <div id="third-section">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-4 col-sm-6 col-xs-10 wow animated fadeInLeft">
+                <div class="left-text">
+                  <h2>MISIÓN</h2>
+                  <div class="line pddescription"></div>
+                  <p class="pdescription">Impulsar y liderar la práctica deportiva de nuestros socios Trabajadores Corporacion Electrica Nacional (Corpoelec)  con la finalidad de  promover el interés por la participación en las actividades físicas, deportivas y formativas en los masa Laboral y la sociedad, para contribuir a mejorar la salud y el bienestar de las personas; con un compromiso de gestión orientado a la mejora continua y la obtención de buenos resultados en el marco del disfrute y el  espaciamiento de los Trabajadores de Corpoelec Lara.</p>
+                         
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-12 templatemo-position-relative">
+                <div class="fourth-arrow">
+                  <a href="#" class="scroll-link btn btn-dark" data-id="fourth-section"><i class="fa fa-angle-down"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="bg__fourth">
+        <div id="fourth-section">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-4 col-md-offset-8 col-sm-6 col-xs-10 col-xs-offset-1 wow animated fadeInLeft">
+                <div class="left-text">
+                  <h2>VISIÓN</h2>
+                  <div class="line"></div>
+                  <p class="pdescription">Ser una organización innovadora e integradora, reconocida en el ámbito de la Corporación Eléctrica  Nacional  y social, con un equipo de profesionales calificados y altamente motivados, que prestan un servicio orientado a las necesidades y expectativas de los socios (trabajadores), en sinergia con otras entidades y administraciones deportivas con unas modernas instalaciones, que contribuyen al desarrollo de hábitos deportivos y culturales  saludables.</p>                                  
+                </div>
+              </div>
+            </div>
+            <div class="col-md-12">
+              <div class="fourth-arrow">
+                <a href="#" class="scroll-link btn btn-dark" data-id="fifth-section"><i class="fa fa-angle-down"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+ 
+	    <div class="section-overlay">
+        <div id="fifth-section">
+          <div class="container">
+            <div class="row ">
+               <div class="col-md-12">
+                <h2 class="section-title left">UNIDAD ORGANIZATIVA</h2>
+               </div>
+            </div>
+            <div class="row text-md-center">
+              <div class="col-12 col-lg-4 col-md-4 ">
+                <div class="card">  
+                  <img class="card-img-top h-100 mx-auto d-block " src="{% static 'img/Clubkilobatico.png' %}" width="200" height="130" alt="" style="margin-left: 30px;">
+                  <div class="card-body">
+                    <h5 class="card-title text-center ">CLUB KILOVATICO</h5>
+
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-12 col-md-4 col-lg-4">
+                <div class="card">  
+                  <img class="card-img-top h-100 mx-auto d-block" src="{% static 'img/logo-gerencia.jpg' %}" width="260" height="130" alt="" >
+                  <div class="card-body">
+                    <h5 class="card-title text-center">GERENCIA DE BIENES Y SERVICIOS LARA</h5>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-12 col-md-4 col-lg-4">
+                <div class="card">  
+                  <img class="card-img-top h-100 mx-auto d-block" width="260" height="130" src="{% static 'img/logo-almacenes.jpg' %}" alt="">
+                  <div class="card-body">
+                    <h5 class="card-title text-center">GRUPO DE TRABAJO ALMACENES LARA</h5>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+        </div>
+        </div>
+      </div>
+       <div class="row">
+          <div class="col-md-12">
+            <div class="service-arrow">
+              <a href="#" class="scroll-link btn btn-dark" data-id="contacts"><i class="fa fa-angle-down"></i></a>
+            </div>
+          </div>
+        </div>        
+
+      <div id="contacts"> 
+        <div class="bg__second"> 
+        </div>
+      </div>
+        <div class="row">
+          <div class="col-md-12 fadeInUp">
+            <div class="sevice-items">
+              <div class="col-md-5 col-sm-1 wow bounceInUp">
+                <div class="single-item single-itemagua ">
+                  <i class="fas fa-phone"></i>
+                  <h2>TELEFONO</h2>
+                  <ul>
+                    <li>02512304654</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="col-md-7 col-sm-1 wow bounceInUp">
+                <div class="single-item single-itemarbol">
+                  <i class="fas fa-envelope"></i>
+                  <h2>CORREO</h2>
+                  <p>clubkilovaticolara01@gmail.com</p>
+                </div>
+              </div>
+              
+              </div>
+            </div>
+          </div>
+        </div>
+       
+      </div>
+
+      <footer>
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12">
+              <div class="social-icons">
+                <ul>
+                  <!-- <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                  <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                  <li><a href="#"><i class="fa fa-twitter"></i></a></li> -->
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="copyright-text">
+              <p>DERECHOS RESERVADOS &copy; 2020 CLUB KILOVATICO</p>
+            </div>
+          </div>
+          <div class="col-md-12">
+            <div class="third-arrow">
+              <a href="#" class="scroll-link btn btn-dark" data-id="top"><i class="fa fa-angle-up"></i></a>
+            </div>
+          </div>
+        </div>
+      </footer>
+
+    </div>   
+    <script src="{% static 'js/vendor/jquery-1.11.1.min.js' %}"></script>
+    <script src="{% static 'js/vendor/bootstrap.min.js' %}"></script>
+    <script src="{% static 'js/vendor/wow-animate.js' %}"></script>
+    <script src="{% static 'js/main.js' %}"></script>
+    <script>
+        // wow
+        new WOW ({
+          animateClass: 'animated',
+          offset:       100
+        }).init();
+    </script>
+
+  </body>
+</html>

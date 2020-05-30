@@ -1,0 +1,150 @@
+{% load static %}
+<!DOCTYPE html>
+<head>
+
+	<title>FORMULARIO DE REGISTRO</title>
+	<meta name="keywords" content="" />
+	<meta name="description" content="" />
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+	<link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet" type="text/css">
+	<link href="{% static 'css/bootstrap-theme.min.css' %}" rel="stylesheet" type="text/css">
+	<link href="{% static 'css/templatemo-style.css' %}" rel="stylesheet" type="text/css">	
+	<link rel="stylesheet" href="{% static 'css/bootstrap-datepicker.css' %}">
+</head>
+<body class="templatemo-bg-gray">
+	<h1 class="margin-bottom-15">FORMULARIO DE REGISTRO</h1>
+
+	<div class="container contsuper">
+		<div class="contenedor">
+			<form method="post" class="form-control templatemo-create-account" enctype="multipart/form-data">
+				{% csrf_token %}
+					<div class="form-group">
+						<div class="container">
+							<div class="row">
+								<div class="col-6 col-sm-6">
+									<label for="formGroupExampleInput">CEDULA</label>
+									<!-- <input required autofocus  minlength="7" maxlength="8" type="text" id="cedula" class="form-control" name="cedula" placeholder="INGRESE SU CEDULA"
+									value="{{ CI }}"> -->
+									{{ form.CI }}
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="form-group">
+							<div class="container">
+								<div class="row">
+									<div class="col-12 col-sm-6" >
+										<label for="formGroupExampleInput">NOMBRES</label>
+										<!-- <input required autofocus type="text" class="form-control" name="nombres" placeholder="NOMBRES" value="{{ Nombres }}"> -->
+										{{ form.Nombres }}
+									</div>
+					
+									<div class="col-12 col-sm-6">
+										<label for="formGroupExampleInput">APELLIDOS</label>
+										<!-- <input required autofocus type="text" class="form-control" name="apellidos" placeholder="APELLIDOS" value="{{ Apellidos }}"> -->
+										{{ form.Apellidos }}
+									</div>
+								</div>
+							</div>
+					</div>
+					<div class="form-group">
+							<div class="container">
+								<div class="row">
+					
+									<div class="col-12 col-sm-6">
+										<label>FECHA DE NACIMIENTO</label>
+										<!-- <input required  autofocus type="text" class="form-control" id="usr1" name="event_date" placeholder="DIA/MES/AÑO" autocomplete="off" value="{{ FechaNacimiento }}"> -->
+										{{ form.FechaNacimiento }}
+									</div>
+									<div class="col-12 col-sm-6">
+											<label for="formGroupExampleInput">SEXO</label>
+											<!-- <select class="form-control" name="departamento" id="departamento" required autofocus value="{{  Sexo }}">
+												<option value="">SELECCIONE UNA OPCION</option>
+												<option value="M">MASCULINO</option>
+												<option value="F">FEMENINO</option>
+											</select> -->
+											{{ form.Sexo }}
+									</div>
+								</div>
+							</div>
+					</div>
+					<div class="form-group">
+							<div class="container">
+								<div class="row">
+									<div class="col-12 col-sm-6" >
+										 <label for="formGroupExampleInput">ID PERSONAL</label>
+										 <!--
+										<input required autofocus type="text" class="form-control" name="cod_trabajador" placeholder="INGRESE SU NUMERO PERSONAL" value="{{ Numero_Personal }}"> -->
+										{{ form.Numero_Personal }}
+									</div>
+								</div>
+							</div>
+					</div>
+					<div class="form-group">
+							<div class="container">
+								<div class="row">
+									<div class="col-12 col-sm-6" >
+										<label for="formGroupExampleInput">CARGA FAMILIAR</label>
+										<!-- <input required autofocus type="text" class="form-control" name="cod_trabajador" placeholder="INGRESE EL CARGO" value="{{ Carga_Familiar }}"> -->
+										{{ form.Carga_Farmiliar }}
+									</div>
+					
+									<div class="col-12 col-sm-6">
+										<label for="formGroupExampleInput">GERENCIA</label>
+										<!-- <input required autofocus type="text" class="form-control" name="cod_trabajador" placeholder="INGRESE LA GERENCIA A LA QUE PERTENECE" value="{{ Departamento }}"> -->
+										{{ form.Departamento }}
+									</div>
+								</div>
+							</div>
+					</div>
+					<div class="form-group">
+							<div class="container">
+								<div class="row">
+									<div class="col-12 col-sm-6" >
+										<label for="formGroupExampleInput">CORREO</label>
+										<!-- <input required autofocus type="email" class="form-control" name="cod_trabajador" placeholder="INGRESE SU CORREO" value="{{ Correo }}"> -->
+										{{ form.Correo }}
+									</div>
+								</div>
+							</div>
+					</div>
+					<div class="form-group">
+							<div class="container">
+								<div class="row">
+									<div class="col-12">
+										<div class="alert alert-info" role="alert">
+											<strong>INFORMACIÓN!</strong> Aqui debera subir una foto
+										</div>
+										<label for="formGroupExampleInput">Inserte Una Imagen</label>
+										<!-- <input required autofocus type="file" name="avatar" value="{{ Foto }}"> -->
+										{{ form.Foto }}
+									</div>
+								</div>
+							</div>
+						</div>
+					<div class="form-group">
+							<div class="container">
+								<div class="row">
+									<div class="col-12 col-sm-12">
+										<input type="submit" class="btn btn-outline-danger  " value="ENVIAR FORMULARIO"></input>
+									</div>
+									
+								</div>
+							</div>
+					</div>
+			</form>
+		</div>
+	</div>
+
+	<footer class="footerlogin text-center ">
+			<p class="plogin">DERECHOS RESERVADOS &copy; 2020 CLUB KILOVATICO</p>	
+	</footer>
+
+	<script type="text/javascript" src="{% static 'js/vendor/jquery.js' %}"></script>
+	<script src="{% static 'js/vendor/fechacap.js' %}"></script>
+	<script type="text/javascript" src="{% static 'js/vendor/bootstrap.min.js' %}"></script>
+	<script type="text/javascript" src="{% static 'js/vendor/bootstrap-datepicker.js' %}"></script>
+</body>
+</html>

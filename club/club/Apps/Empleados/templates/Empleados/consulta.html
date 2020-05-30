@@ -1,0 +1,57 @@
+{% load static %}
+<!DOCTYPE html>
+<head>
+
+	<title>CONSULTA DE REGISTRO</title>
+	<meta name="keywords" content="" />
+	<meta name="description" content="" />
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+	<link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet" type="text/css">
+	<link href="{% static 'css/bootstrap-theme.min.css' %}" rel="stylesheet" type="text/css">
+	<link href="{% static 'css/templatemo-style.css' %}" rel="stylesheet" type="text/css">	
+	<link rel="stylesheet" href="{% static 'css/bootstrap-datepicker.css' %}">
+</head>
+<body class="templatemo-bg-gray">
+	<h1 class="margin-bottom-15">CONSULTA DE REGISTRO</h1>
+
+	<div class="container contsuper">
+		<div class="contenedor">
+			<form method="post" class="form-control templatemo-create-account">
+				{% csrf_token %}
+					<div class="form-group">
+						<div class="container">
+							<div class="row">
+								<div class="col-6 col-sm-6">
+									<label for="formGroupExampleInput">CEDULA</label>
+									<input required autofocus  minlength="7" maxlength="8" type="text" id="cedula" class="form-control" name="cedula" placeholder="INGRESE SU CEDULA"
+									value=""> 
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="form-group">
+							<div class="container">
+								<div class="row">
+									<div class="col-12 col-sm-12">
+										<input type="submit" class="btn btn-outline-danger  " value="ENVIAR"></input>
+									</div>
+									
+								</div>
+							</div>
+					</div>
+			</form>
+		</div>
+	</div>
+
+	<footer class="footerlogin text-center ">
+			<p class="plogin">DERECHOS RESERVADOS &copy; 2020 CLUB KILOVATICO</p>	
+	</footer>
+
+	<script type="text/javascript" src="{% static 'js/vendor/jquery.js' %}"></script>
+	<script src="{% static 'js/vendor/fechacap.js' %}"></script>
+	<script type="text/javascript" src="{% static 'js/vendor/bootstrap.min.js' %}"></script>
+	<script type="text/javascript" src="{% static 'js/vendor/bootstrap-datepicker.js' %}"></script>
+</body>
+</html>

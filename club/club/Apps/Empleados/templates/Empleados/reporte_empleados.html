@@ -1,0 +1,78 @@
+{% load static %}
+<!DOCTYPE html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Reporte de Empleados</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+        <link rel="stylesheet" href="{% static 'css/bootstrapindex.min.css' %}">
+       
+        <link rel="stylesheet" href="{% static 'css/all.min.css' %}">
+        <link rel="stylesheet" href="{% static 'css/wow-animate.css' %}">
+        <link rel="stylesheet" href="{% static 'css/templatemo-style.css' %}">
+        <script src="{% static 'js/vendor/modernizr-2.6.2-respond-1.1.0.min.js' %}"></script>
+        <style type="text/css">
+          .cabe{
+            width: 90%;
+            height: 50px;
+            background: #fff;
+          }
+          .cabe a{
+            margin-left: 40px;
+          }
+        </style>
+    </head>
+    <body>
+  
+   <nav class="cabe">
+            <a href="#" class="navbar-brand scroll-top logoheader"> <img src="{% static 'img/Logo-club.jpg' %}" alt="Layer Template" width="200" height="90"></a>
+    </nav>
+
+    <div class="parallax">
+        <h1 class="text-center text-primary font-weight-bold">Lista de Empleados</h1>
+         <table class="table table-responsive table-bordered">
+          <thead>
+              <tr>
+                  <th>Cedula</th>
+                  <th>Nombres</th>
+                  <th>Apellidos</th>
+                  <th>ID Personal</th>
+                  <th>Cargar Familiar</th>
+              </tr>
+          </thead>
+          <tbody>
+                 {% for empleado in Empleados %}
+                  <tr>
+                    <td>{{ empleado.CI }}</td>
+                    <td>{{ empleado.Nombres }}</td>
+                    <td>{{ empleado.Apellidos }}</td>
+                    <td>{{ empleado.Numero_Personal }}</td>
+                    <td>{{ empleado.Carga_Familiar }}</td>
+                  </tr>
+                  {% empty %}
+                  <tr>
+                    <td> No hay empleados registrados</td>
+                  </tr>
+                  {% endfor %}
+          </tbody>
+      </table>
+    </div>
+       
+
+      <footer>
+        <div class="container">
+          <div class="row">
+            <div class="copyright-text">
+              <p>DERECHOS RESERVADOS &copy; 2020 CLUB KILOVATICO</p>
+            </div>
+          </div>
+        </div>
+      </footer>
+
+    </div>   
+    <script src="{% static 'js/vendor/jquery-1.11.1.min.js' %}"></script>
+    <script src="{% static 'js/vendor/bootstrap.min.js' %}"></script>
+  </body>
+</html>
