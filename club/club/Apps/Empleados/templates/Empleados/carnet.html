@@ -5,6 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet" type="text/css">
+    <link href="{% static 'css/bootstrap-theme.min.css' %}" rel="stylesheet" type="text/css">
+    <link href="{% static 'css/templatemo-style.css' %}" rel="stylesheet" type="text/css">  
+    <link rel="stylesheet" href="{% static 'css/bootstrap-datepicker.css' %}">
     <title>Carnet PDF</title>
     <style>
 
@@ -114,14 +118,63 @@
 
 
     </style>
+
 </head>
 <body>
    <!--  <nav class="cabe">
             <a href="#" class="navbar-brand scroll-top logoheader"> <img src="{% static 'img/Logo-club.jpg' %}" alt="Layer Template" width="200" height="90"></a>
     </nav>
     <h1>CARNET DE AFILIACIÓN AL CLUB KILOVATICO</h1> -->
-    <div class="contenedor">
-        <div class="navbar-brand inline-block">
+    <div class="container-fluid d-block" style="width: 800px;">
+        <div class="row center-block">
+            <div class="col-sm float-left ">
+            
+            <div class="card-deck" style="margin-top: 5px; margin-bottom: 5px;">
+              
+              <div class="card border-4 border-dark center-block" style="margin-left: 25px; margin-top: 5px; margin-bottom: 5px; width: 300px; margin-right: 140px;">
+                <div class="card-header border-bottom border-secondary rounded" style="width: 300px;">
+                <nav class="nav navbar navbar-inverse justify-content-between ">
+                  <li class="nav-item">
+                     <img class="card-img-top rounded float-left img-fluid img-thumbnail" src="{% static 'img/Logo-club.jpg' %}" alt="Responsive image" style="margin-top: -5px;width: 65px;">
+                  </li>
+                  <li class="nav-item">
+                    <img class="card-img-top rounded float-right img-fluid img-thumbnail" src="{% static 'img/logo-corpoelec.png' %}" alt="Responsive image" style="margin-top: -5px; width: 120px;">
+                  </li>
+                </nav>
+                </div>
+                
+                <div class="card-body" style="width: 300px;">
+                <img class="card-img-top img-fluid rounded  img-thumbnail text-center mx-auto rounded-circle d-block" style="margin-top: -10px; width: 100px;" src="{{ Empleado.Foto.url }}" alt="Responsive image">
+                  <h5 class="card-title text-center text-uppercase" style="font-size: 16px;"><strong>{{ Empleado.Apellidos }} {{ Empleado.Nombres }}</strong></h5>
+                  <div class="text-center text-uppercase" style="font-size: 10px;">
+                      <p class="card-text"><strong>CEDULA:</strong> {{ Empleado.CI }} </p> <br>
+                      <p class="card-text" style="margin-top: -30px"><strong>ID PERSONAL:</strong> {{ Empleado.Numero_Personal }} </p> <br>
+                      <p class="card-text" style="margin-top: -30px"><strong>GERENCIA:</strong> {{ Empleado.Departamento }} </p> <br>
+                      <p class="card-text" style="margin-top: -30px"><strong>CARGA FAMILIAR:</strong> {{ Empleado.Carga_Familiar }} </p> <br>
+                      {% if Empleado.Sexo == 'M' %}
+                        <p class="card-text" style="margin-top: -30px"><strong>SEXO:</strong>Masculino</p> <br>
+                      {% else %}
+                        <p class="card-text" style="margin-top: -30px"><strong>SEXO:</strong>Femenino</p> <br>
+                      {% endif %}
+                  </div>
+                  
+                </div>
+              </div>
+              <div class="col-sm float-right center-block">
+                 <div class="card border border-dark rounded" style="margin-right: 140px; margin-top: 5px; margin-bottom: 5px; margin-left: -140px;">
+                <div class="card-body">
+                  <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+                </div>
+              </div>
+            </div>   
+            </div>
+              
+            
+        </div>
+        
+              
+        </div>
+       <!--  <div class="navbar-brand inline-block">
             <a href="#" class="navbar-brand scroll-top logoheader"> <img class="img-carnet" src="{% static 'img/logo-corpoelec.png' %}" alt="Layer Template" > <img class="img-carnet1"  src="{% static 'img/Logo-club.jpg' %}" alt="Layer Template"></a>
         </div>
         
@@ -153,8 +206,7 @@
                     </tr>
                 </thead>
             </table>
-        </div>
-        <footer class="pie"></footer>
+        </div> -->
     </div>
 </body>
 </html>

@@ -83,6 +83,8 @@ class Carnet(PDFTemplateView):
 	template_name = 'Empleados/carnet.html'
 	show_content_in_browser = True
 	cmd_options = {
+		'load-error-handling' : True,
+		'load-media-error-handling' : True,
 		'quiet' : False,
     }
 
@@ -92,6 +94,25 @@ class Carnet(PDFTemplateView):
 		empl = Empleado.objects.get(CI=CI)
 		context['Empleado'] = empl
 		self.filename = "%s.pdf" % empl.CI
+		return context
+
+class Carnet2(TemplateView):
+	login_required = True
+	model = Empleado
+	template_name = 'Empleados/carnet.html'
+	#show_content_in_browser = True
+	#cmd_options = {
+	#	'load-error-handling' : True,
+	#	'load-media-error-handling' : True,
+	#	'quiet' : False,
+    #}
+
+	def get_context_data(self, **kwargs):
+		context = super().get_context_data(**kwargs)
+		CI = kwargs['Empleado_CI']
+		empl = Empleado.objects.get(CI=CI)
+		context['Empleado'] = empl
+		#self.filename = "%s.pdf" % empl.CI
 		return context
 
 class Consulta(FormView):

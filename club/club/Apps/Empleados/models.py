@@ -27,5 +27,5 @@ class Empleado(models.Model):
 		return '{0}, {1}, {2}'.format(self.CI, self.Apellidos, self.Nombres)
 
 	def carnet(self):
-		return mark_safe('<a class="grp-button" href="%s" target="blank">Ver Carnet</a>' % reverse('Empleados:pdf', args=[self.CI]))
+		return mark_safe('<a class="grp-button" href="%s" target="blank">Ver Carnet</a>' % reverse('Empleados:carnet', args=[self.CI]))
 	carnet.short_description = ('Carnet')
