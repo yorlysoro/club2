@@ -83,8 +83,7 @@ class Carnet(PDFTemplateView):
 	template_name = 'Empleados/carnet.html'
 	show_content_in_browser = True
 	cmd_options = {
-		'load-error-handling' : True,
-		'load-media-error-handling' : True,
+		'page-size' : 'Letter',
 		'quiet' : False,
     }
 

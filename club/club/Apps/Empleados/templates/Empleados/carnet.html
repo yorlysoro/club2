@@ -125,26 +125,26 @@
             <a href="#" class="navbar-brand scroll-top logoheader"> <img src="{% static 'img/Logo-club.jpg' %}" alt="Layer Template" width="200" height="90"></a>
     </nav>
     <h1>CARNET DE AFILIACIÓN AL CLUB KILOVATICO</h1> -->
-    <div class="container-fluid d-block" style="width: 800px;">
-        <div class="row center-block">
-            <div class="col-sm float-left ">
+    <div class="container-fluid" style="width: 800px;">
+        <div class="row">
+            <div class="col float-left ">
             
             <div class="card-deck" style="margin-top: 5px; margin-bottom: 5px;">
               
-              <div class="card border-4 border-dark center-block" style="margin-left: 25px; margin-top: 5px; margin-bottom: 5px; width: 300px; margin-right: 140px;">
+              <div class="card border-4 border-dark" style="margin-left: 25px; margin-top: 5px; margin-bottom: 5px; width: 300px; margin-right: 0px;">
                 <div class="card-header border-bottom border-secondary rounded" style="width: 300px;">
-                <nav class="nav navbar navbar-inverse justify-content-between ">
+                <nav class="nav navbar justify-content-between ">
                   <li class="nav-item">
-                     <img class="card-img-top rounded float-left img-fluid img-thumbnail" src="{% static 'img/Logo-club.jpg' %}" alt="Responsive image" style="margin-top: -5px;width: 65px;">
+                     <img class="card-img-top rounded float-left img-fluid img-thumbnail" src="{% static 'img/logo-corpoelec.png' %}" alt="Responsive image" style="margin-top: -5px;width: 120px;">
                   </li>
                   <li class="nav-item">
-                    <img class="card-img-top rounded float-right img-fluid img-thumbnail" src="{% static 'img/logo-corpoelec.png' %}" alt="Responsive image" style="margin-top: -5px; width: 120px;">
+                    <img class="card-img-top rounded float-right img-fluid img-thumbnail" src="{% static 'img/Logo-club.jpg' %}" alt="Responsive image" style="margin-top: -5px; width: 65px;">
                   </li>
                 </nav>
                 </div>
                 
                 <div class="card-body" style="width: 300px;">
-                <img class="card-img-top img-fluid rounded  img-thumbnail text-center mx-auto rounded-circle d-block" style="margin-top: -10px; width: 100px;" src="{{ Empleado.Foto.url }}" alt="Responsive image">
+                <img class="card-img-top img-fluid imt-thumbnail position-relative rounded mx-auto rounded-circle d-block" style="margin-top: -10px; width: 100px;" src="{{ Empleado.Foto.url }}" alt="Responsive image">
                   <h5 class="card-title text-center text-uppercase" style="font-size: 16px;"><strong>{{ Empleado.Apellidos }} {{ Empleado.Nombres }}</strong></h5>
                   <div class="text-center text-uppercase" style="font-size: 10px;">
                       <p class="card-text"><strong>CEDULA:</strong> {{ Empleado.CI }} </p> <br>
@@ -157,13 +157,28 @@
                         <p class="card-text" style="margin-top: -30px"><strong>SEXO:</strong>Femenino</p> <br>
                       {% endif %}
                   </div>
+
                   
                 </div>
+                <div class="card-footer text-muted bg-danger">
+                    
+                </div>
               </div>
-              <div class="col-sm float-right center-block">
-                 <div class="card border border-dark rounded" style="margin-right: 140px; margin-top: 5px; margin-bottom: 5px; margin-left: -140px;">
-                <div class="card-body">
-                  <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+              <div class="col float-right ">
+                 <div class="card border border-dark rounded " style="margin-right: 425px; margin-top: 5px; margin-bottom: 5px; margin-left: 10px;">
+                     <img class=" img-fluid img-thumbnail text-center mx-auto rounded-circle d-block" src="{% static 'img/Logo-club2.jpg' %}" style="margin-top: 20px;"alt="Responsive image">
+                <div class="card-body text-justify font-weight-bold" style="margin-top: -280px; font-size: 14.3px;">
+                   
+                  <p class="card-text">Esta identificacion es instransferible y propiedad de Club Kilovatico Estado Lara.</p>
+                  <p class="card-text">En caso de extravio, emergencia o verficacion, favor coumicarse a los siguientes contactos:</p>
+                  <p class="card-text"> Telefono: 02512304654</p>
+                  <p class="card-text"> Correo: clubkilovaticolara01@gmail.com</p>
+                  <p class="card-text text-center">Club Kilovatico <br>Estado Lara</p>
+
+                  <br>
+                </div>
+                <div class="card-footer text-muted bg-danger">
+                    
                 </div>
               </div>
             </div>   
