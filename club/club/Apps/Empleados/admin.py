@@ -1,6 +1,4 @@
 from django.contrib import admin
-from django.http import HttpResponseRedirect
-from django.urls import reverse
 
 # Register your models here.
 
@@ -11,7 +9,6 @@ admin.site.index_title = "Bienvenido al area de administracion del Club Kilovati
 
 
 class EmpleadoAdmin(admin.ModelAdmin):
-#	actions = ['Imprimir'] 
 	list_display = ('cedula', 'Nombres', 'Apellidos', 'carnet')
 	show_full_result_count = True
 

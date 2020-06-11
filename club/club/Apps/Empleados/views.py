@@ -1,12 +1,9 @@
-from django.shortcuts import HttpResponseRedirect, redirect
-from django.views.generic import TemplateView, DetailView, ListView, RedirectView
+from django.shortcuts import HttpResponseRedirect
+from django.views.generic import TemplateView, RedirectView
 from django.views.generic.edit import FormView
 from django.urls import reverse_lazy, reverse
-from django.http import HttpResponse, HttpResponseForbidden
-from django.contrib.auth import logout, authenticate, login
-from django.contrib.auth.decorators import login_required
+from django.contrib.auth import logout, login
 from django.contrib.auth.forms import AuthenticationForm
-from django.utils.decorators import method_decorator 
 from wkhtmltopdf.views import PDFTemplateView
 from .forms import EmpleadoForm, ConsultaForm
 from .models import Empleado
@@ -16,9 +13,6 @@ class home(TemplateView):
 	login_required = True
 	template_name = 'Empleados/index.html'
 
-	# @method_decorator(login_required)
-	# def dispatch(self, request, *args, **kwargs):
-	# 	return super(self.__class__, self).dispatch(request, *args, **kwargs)
 
 class registro(FormView):
 	login_required = True
@@ -27,9 +21,6 @@ class registro(FormView):
 	template_name = 'Empleados/crear-cuenta.html'
 	success_url = reverse_lazy('Empleados:home')
 
-	# @method_decorator(login_required)
-	# def dispatch(self, request, *args, **kwargs):
-	# 	return super(self.__class__, self).dispatch(request, *args, **kwargs)
 	
 	def post(self, request, *args, **kwargs):
 		form = self.form_class(request.POST, request.FILES)
@@ -116,6 +107,7 @@ class ListaEmpleados(PDFTemplateView):
 	paginated_by = 60
 	show_content_in_browser = True
 	cmd_options = {
+		'page-size' : 'Letter',
 		'quiet' : False,
     }
 
