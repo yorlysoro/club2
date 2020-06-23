@@ -1,4 +1,5 @@
 from django import forms
+from django.contrib.auth.forms import AuthenticationForm
 
 class EmpleadoForm(forms.Form):
 	CI = forms.CharField(required=True, widget=forms.TextInput(attrs={
@@ -80,3 +81,12 @@ class ConsultaForm(forms.Form):
 		'placeholder' : 'Ingrese su Cedula',
 		'type' : 'text'
 		}))
+
+
+class FormularioLogin(AuthenticationForm):
+	def __init__(self, *args, **kwargs):
+	    super(FormularioLogin, self).__init__(*args,**kwargs)
+	    self.fields['username'].widget.attrs['class'] = 'form-control'
+	    self.fields['username'].widget.attrs['placeholder'] = 'Coloque su Usuario...'
+	    self.fields['password'].widget.attrs['class'] = 'form-control'
+	    self.fields['password'].widget.attrs['placeholder'] = 'Coloque su contraseña...'

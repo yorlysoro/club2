@@ -5,7 +5,7 @@ from django.urls import reverse_lazy, reverse
 from django.contrib.auth import logout, login
 from django.contrib.auth.forms import AuthenticationForm
 from wkhtmltopdf.views import PDFTemplateView
-from .forms import EmpleadoForm, ConsultaForm
+from .forms import EmpleadoForm, ConsultaForm, FormularioLogin
 from .models import Empleado
 # Create your views here.
 
@@ -53,7 +53,7 @@ class Logout(RedirectView):
 
 
 class Login(FormView):
-	form_class = AuthenticationForm
+	form_class = FormularioLogin
 	template_name = 'Empleados/login.html'
 	success_url = reverse_lazy('Empleados:home')
 
