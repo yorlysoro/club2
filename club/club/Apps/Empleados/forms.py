@@ -1,5 +1,6 @@
 from django import forms
 from django.contrib.auth.forms import AuthenticationForm
+from .models import DEPARTAMENTO_CHOICES
 
 class EmpleadoForm(forms.Form):
 	CI = forms.CharField(required=True, widget=forms.TextInput(attrs={
@@ -22,10 +23,9 @@ class EmpleadoForm(forms.Form):
 		'placeholder' : 'Ingrese su Nombre',
 		'type' : 'text'
 		}))
-	Departamento = forms.CharField(required=True, widget=forms.TextInput(attrs={
+	Departamento = forms.ChoiceField(required=True, label=('Seleccione su gerencia'), choices=DEPARTAMENTO_CHOICES, widget=forms.Select(attrs={
 		'class' : 'form-control',
 		'name'	: 'Departamento',
-		'placeholder' : 'Ingrese la gerencia',
 		'type' : 'text'
 		}))
 	Carga_Farmiliar = forms.CharField(required=True, widget=forms.TextInput(attrs={

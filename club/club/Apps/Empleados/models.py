@@ -3,13 +3,38 @@ from django.urls import reverse
 from django.utils.html import mark_safe
 
 # Create your models here.
+DEPARTAMENTO_CHOICES = (
+	('1' ,'Distribucion'),
+	('2' ,'Comercial'),
+	('3' ,'Generacion'),
+	('4' ,'Transmision'),
+	('5' ,'Uree'),
+	('6' ,'P y P'),
+	('7' ,'Bienes y Servicios'),
+	('8' ,'ASHO'),
+	('9' ,'Talento Humano'),
+	('10' ,'Procura'),
+	('11' ,'Auditoria Interna'),
+	('12' ,'Desarrolo Social'),
+	('13' ,'Finanzas Lara'),
+	('14' ,'Planificacion Lara'),
+	('15' ,'Desarrollo (Ingenieria)'),
+	('16' ,'Despacho'),
+	('17' ,'ATIT'),
+	('18' ,'Fiscalizacion'),
+	('19' ,'Proyectos mayores'),
+	('20' ,'Comunicaciones Corporativas'),
+	('21' ,'Mesas de Energias'),
+	('22' ,'COD'),
+	('23' ,'Consultoria Juridica'),
+	('24' ,'Tesoreria'), )
 
 class Empleado(models.Model):
 
 	CI = models.CharField(max_length=8, unique=True, help_text="Solo colocar numeros")
 	Apellidos = models.CharField(max_length=64, help_text="Solo colocar caracteres")
 	Nombres = models.CharField(max_length=64, help_text="Solo colocar caracteres")
-	Departamento = models.CharField(max_length=255, help_text="Coloque el Departamento en donde trabaja")
+	Departamento = models.CharField(max_length=255, choices= DEPARTAMENTO_CHOICES, help_text="Coloque el Departamento en donde trabaja")
 	Carga_Familiar = models.IntegerField()
 	FechaNacimiento = models.DateField(help_text="Coloque su fecha de nacimiento en formato dia/mes/año")
 	sexo = [
