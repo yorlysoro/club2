@@ -11,6 +11,7 @@ admin.site.index_title = "Bienvenido al area de administracion del Club Kilovati
 class EmpleadoAdmin(admin.ModelAdmin):
 	list_display = ('cedula', 'Nombres', 'Apellidos', 'carnet')
 	show_full_result_count = True
+	list_filter = ('Departamento',)
 
 	def cedula(self, obj):
 		return "%s" % (obj.CI)
