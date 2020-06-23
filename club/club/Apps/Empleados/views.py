@@ -6,7 +6,7 @@ from django.contrib.auth import logout, login
 from django.contrib.auth.forms import AuthenticationForm
 from wkhtmltopdf.views import PDFTemplateView
 from .forms import EmpleadoForm, ConsultaForm, FormularioLogin
-from .models import Empleado
+from .models import Empleado, DEPARTAMENTO_CHOICES
 # Create your views here.
 
 class home(TemplateView):
@@ -83,6 +83,7 @@ class Carnet(PDFTemplateView):
 		CI = kwargs['Empleado_CI']
 		empl = Empleado.objects.get(CI=CI)
 		context['Empleado'] = empl
+		context['Departamento'] = DEPARTAMENTO_CHOICES[int(empl.Departamento)-1][1]
 		self.filename = "%s.pdf" % empl.CI
 		return context
 
