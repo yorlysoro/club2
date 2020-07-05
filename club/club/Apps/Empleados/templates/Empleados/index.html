@@ -12,6 +12,8 @@
         <link rel="stylesheet" href="{% static 'css/all.min.css' %}">
         <link rel="stylesheet" href="{% static 'css/wow-animate.css' %}">
         <link rel="stylesheet" href="{% static 'css/templatemo-style.css' %}">
+        {% block extracss %}
+        {% endblock %}
         <script src="{% static 'js/vendor/modernizr-2.6.2-respond-1.1.0.min.js' %}"></script>
     </head>
     <body>
@@ -39,7 +41,7 @@
                   </li>
                   <li><a href="/consultar">CONSULTAR</a></li>
                   <li><a href="#contacts">CONTACTENOS</a></li>
-                  <li><a href="#">EVENTOS</a></li>
+                  <li><a href=" {% url 'Eventos:Eventos_Lista' %}">EVENTOS</a></li>
                   {% if request.user.is_superuser %}
                     <li><a href="/admin">ADMIN</a></li>
                   {% endif %}
@@ -318,6 +320,8 @@
           offset:       100
         }).init();
     </script>
+    {% block extrajs %}
+    {% endblock %}
 
   </body>
 </html>

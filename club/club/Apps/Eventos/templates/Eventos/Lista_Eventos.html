@@ -1,0 +1,34 @@
+{% extends 'Empleados/crear-cuenta.html' %}
+{% load static %}
+{% block extracss %}
+<link href="{% static 'css/clean-blog.min.css' %} " rel="stylesheet">
+{% endblock %}
+{% block titulo %}
+Eventos a Realizar
+{% endblock %}
+{% block cuerpo %}
+<div class="container">
+    {% for evento in Eventos %}
+        {% if evento.publicado %}
+        <div class="row">
+            <div class="col-lg-8 col-md-10 mx-auto">
+                <div class="post-preview">
+                    <a href="{% url 'Eventos:Evento_Detalle' evento.id %}">
+                        <h2 class="post-title">
+                        {{ evento.titulo }}
+                        </h2>
+                        <h3 class="post-subtitle">
+                        {{ evento.descripcion }}
+                        </h3>
+                    </a>
+                    <p class="post-meta"><strong>Publicado:</strong> {{ evento.fecha_creacion }} </p>
+                </div>
+            </div>
+        </div>
+        {% endif %}
+    {% endfor %}
+</div>
+{% endblock %}
+{% block extrajs %}
+<script src=" {% static 'js/clean-blog.min.js' %} "></script>
+{% endblock %}

@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     #Aplicaciones Creadas por Terceros
     'wkhtmltopdf',
     'ckeditor',
+    'ckeditor_uploader',
 ]
 
 MIDDLEWARE = [
@@ -120,6 +121,8 @@ USE_L10N = True
 
 USE_TZ = True
 
+#Ruta de archivos ckeditor
+CKEDITOR_UPLOAD_PATH = "eventos/"
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
@@ -135,3 +138,10 @@ MEDIA_URL = '/media/'
 
 #Para los pdfs
 #WKHTMLTOPDF_CMD = '/usr/bin/wkhtmltopdf'
+
+#configuracion de Ckeditor
+CKEDITOR_CONFIGS = {
+    'default': {
+        'toolbar': 'full',
+    },
+}

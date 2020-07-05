@@ -9,7 +9,7 @@ Formulario de Registro
                   <li><a href="/home">INICIO</a></li>
                   </li>
                   <li><a href="/consultar">CONSULTAR</a></li>
-				  <li><a href="#">EVENTOS</a></li>
+				  <li><a href="{% url 'Eventos:Eventos_Lista' %}">EVENTOS</a></li>
                   {% if request.user.is_superuser %}
                     <li><a href="/admin">ADMIN</a></li>
                   {% endif %}

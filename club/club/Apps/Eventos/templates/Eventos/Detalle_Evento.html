@@ -1,0 +1,32 @@
+{% extends 'Eventos/Lista_Eventos.html' %}
+{% load static %}
+{% block titulo %}
+Evento.titulo
+{% endblock %}
+{% block cuerpo %}
+<!-- Page Header -->
+  <header class="masthead" style="background-image: url('{{ Evento.imagen_referencial.url }}')">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="post-heading">
+            <h1>{{ Evento.titulo }}</h1>
+            <span class="meta"><strong> Publicado:</strong>{{ Evento.fecha_creacion }}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Post Content -->
+  <article>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+         {{ Evento.contenido |safe }}
+        </div>
+      </div>
+    </div>
+  </article>
+{% endblock %}
