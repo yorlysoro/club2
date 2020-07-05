@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Club Kilovatico</title>
+        <title>{% block titulo %} Club Kilovatico {% endblock %} </title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         
@@ -15,7 +15,7 @@
         <script src="{% static 'js/vendor/modernizr-2.6.2-respond-1.1.0.min.js' %}"></script>
     </head>
     <body>
-  
+    
     <div class="header" id="top" >
         <nav class="navbar navbar-inverse" role="navigation">
           <div class="container">
@@ -29,7 +29,8 @@
                   <a href="#" class="navbar-brand scroll-top logoheader"> <img src="{% static 'img/Logo-club.jpg' %}" alt="Layer Template"> CLUB KILOVATICO</a>
               </div>
               <!--/.navbar-header-->
-              <div id="main-nav" class="collapse navbar-collapse">
+              {% block menu %}
+               <div id="main-nav" class="collapse navbar-collapse">
                 <ul class="a nav navbar-nav navbar-right " style="margin-top: 30px; font-weight: 800;">
                   <li><a href="/home">INICIO</a></li>
                   <li><a href="#second-section" >SERVICIOS</a>
@@ -38,12 +39,15 @@
                   </li>
                   <li><a href="/consultar">CONSULTAR</a></li>
                   <li><a href="#contacts">CONTACTENOS</a></li>
+                  <li><a href="#">EVENTOS</a></li>
                   {% if request.user.is_superuser %}
                     <li><a href="/admin">ADMIN</a></li>
                   {% endif %}
                   <li><a href="/logout" class="btn btn-danger" style="font-weight: 800; color: #fff;">CERRAR SESIÓN</a></li>
                 </ul>
               </div>
+              {% endblock %}
+             
               <!--/.navbar-collapse-->
       		</div>
       		<!--/.container-->
@@ -51,6 +55,7 @@
           <!--/.navbar-->
     </div>
     <!--/.header-->
+    {% block cuerpo %}
 
 
    <div class="parallax">
@@ -271,7 +276,7 @@
         </div>
        
       </div>
-
+      {% endblock %}
       <footer>
         <div class="container">
           <div class="row">
@@ -290,11 +295,14 @@
               <p>DERECHOS RESERVADOS &copy; 2020 CLUB KILOVATICO</p>
             </div>
           </div>
+          {% block botontop %}
           <div class="col-md-12">
             <div class="third-arrow">
               <a href="#" class="scroll-link btn btn-dark" data-id="top"><i class="fa fa-angle-up"></i></a>
             </div>
           </div>
+          {% endblock %}
+          
         </div>
       </footer>
 

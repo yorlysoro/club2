@@ -31,14 +31,19 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    #Aplicaciones de Django
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    #Aplicaciones Creadas Internamente
     'club.Apps.Empleados',
+    'club.Apps.Eventos',
+    #Aplicaciones Creadas por Terceros
     'wkhtmltopdf',
+    'ckeditor',
 ]
 
 MIDDLEWARE = [
