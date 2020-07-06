@@ -1,5 +1,5 @@
 asgiref==3.2.5
-Django==1.11.29
+Django==2.2.13
 django-ckeditor==5.9.0
 django-js-asset==1.2.2
 django-wkhtmltopdf==3.2.0
